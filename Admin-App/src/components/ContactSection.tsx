@@ -88,7 +88,7 @@ const ContactSection = () => {
             <Card className="bg-card/50 border-border/50">
               <CardContent className="p-0">
                 <iframe
-                src="https://www.google.com/maps/embed?pb=https://maps.app.goo.gl/71FDPgRzaBpBjWz47"
+                src="afdfasd"
                 className="w-full h-64 rounded-lg border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
