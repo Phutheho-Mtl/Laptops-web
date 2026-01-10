@@ -33,7 +33,7 @@ import SupabaseClient from "../Client_apis/Supabase_client";
 // =====================
 // Validation Schema
 // =====================
-const formSchema = z.object({
+const formSchema=z.object({
   brand: z.string().min(2).max(50),
   laptop_name: z.string().min(5).max(100),
   specifications: z.string().min(20).max(1000),
@@ -45,16 +45,16 @@ const formSchema = z.object({
   image3_url: z.string().nullable(),
 });
 
-type FormValues = z.infer<typeof formSchema>;
+type FormValues=z.infer<typeof formSchema>;
 
-const LaptopForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+const LaptopForm=()=>{
+  const [isSubmitting, setIsSubmitting]=useState(false);
 
   // =====================
   // Insert to DB
   // =====================
-  const AddLaptop = async (values: FormValues) => {
-    const { error: InsertError } = await SupabaseClient.from("laptops").insert({
+  const AddLaptop=async (values: FormValues)=>{
+    const { error: InsertError }=await SupabaseClient.from("laptops").insert({
       brand: values.brand,
       laptop_name: values.laptop_name,
       specifications: values.specifications,
@@ -72,7 +72,7 @@ const LaptopForm = () => {
   // =====================
   // React Hook Form Setup
   // =====================
-  const form = useForm<FormValues>({
+  const form=useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       brand: "",
@@ -90,7 +90,7 @@ const LaptopForm = () => {
   // =====================
   // Submit handler
   // =====================
-  const handleSubmit = async (values: FormValues) => {
+  const handleSubmit=async (values: FormValues)=>{
     setIsSubmitting(true);
     try {
       await AddLaptop(values);
@@ -134,7 +134,7 @@ const LaptopForm = () => {
               <FormField
                 control={form.control}
                 name="brand"
-                render={({ field }) => (
+                render={({ field })=>(
                   <FormItem>
                     <FormLabel>Brand *</FormLabel>
                     <FormControl><Input disabled={isSubmitting} {...field} /></FormControl>
@@ -161,7 +161,7 @@ const LaptopForm = () => {
               <FormField
                 control={form.control}
                 name="specifications"
-                render={({ field }) => (
+                render={({ field })=>(
                   <FormItem>
                     <FormLabel>Specifications *</FormLabel>
                     <FormControl>
@@ -178,7 +178,7 @@ const LaptopForm = () => {
               <FormField
                 control={form.control}
                 name="condition"
-                render={({ field }) => (
+                render={({ field })=>(
                   <FormItem>
                     <FormLabel>Condition *</FormLabel>
                     <Select disabled={isSubmitting} value={field.value} onValueChange={field.onChange}>
@@ -197,7 +197,7 @@ const LaptopForm = () => {
               <FormField
                 control={form.control}
                 name="price"
-                render={({ field }) => (
+                render={({ field })=>(
                   <FormItem>
                     <FormLabel>Price *</FormLabel>
                     <FormControl>
@@ -214,7 +214,7 @@ const LaptopForm = () => {
               <FormField
                 control={form.control}
                 name="avail_quantity"
-                render={({ field }) => (
+                render={({ field })=>(
                   <FormItem>
                     <FormLabel>Quantity *</FormLabel>
                     <FormControl>
@@ -234,7 +234,7 @@ const LaptopForm = () => {
               <FormField
                 control={form.control}
                 name="image1_url"
-                render={({ field }) => (
+                render={({ field })=>(
                   <FormItem>
                     <FormControl>
                       <ImageDropzone
@@ -252,7 +252,7 @@ const LaptopForm = () => {
               <FormField
                 control={form.control}
                 name="image2_url"
-                render={({ field }) => (
+                render={({ field })=>(
                   <FormItem>
                     <FormControl>
                       <ImageDropzone
@@ -270,7 +270,7 @@ const LaptopForm = () => {
               <FormField
                 control={form.control}
                 name="image3_url"
-                render={({ field }) => (
+                render={({ field })=>(
                   <FormItem>
                     <FormControl>
                       <ImageDropzone
