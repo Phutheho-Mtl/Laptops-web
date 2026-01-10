@@ -5,6 +5,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ImagesUploader from "@/components/ImageUploader";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import LaptopForm from "@/components/LaptopForm";
 import { useState } from "react";
 
 const Index = () => {
@@ -12,7 +13,7 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background">
       <HeroSection />
-      <ImagesUploader value={Imageurl} setter={setImageurl}/>
+      <LaptopForm/>
       <FeaturedProducts />
       <ServicesSection />
       <ContactSection />

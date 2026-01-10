@@ -1,6 +1,12 @@
 
 import SupabaseClient from "../Client_apis/Supabase_client"
 import { useState } from "react"
+import { useForm } from "react-hook-form";
+import * as z from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { toast } from "./ui/sonner";
+import ImageUploader from "./ImageUploader";
+
 
 
 type laptop_details={
@@ -15,15 +21,24 @@ type laptop_details={
     avail_quantity :number
 }
 
+//define the form schema
+const formSchema = z.object({
+  title: z
+    .string()
+    .min(5, "Bug title must be at least 5 characters.")
+    .max(32, "Bug title must be at most 32 characters."),
+  description: z
+    .string()
+    .min(20, "Description must be at least 20 characters.")
+    .max(100, "Description must be at most 100 characters."),
+})
+
+
 const LaptopForm=()=>{
     const [image1_url,setImage1_url]=useState<string|null>(null)
     const [image2_url,setImage2_url]=useState<string|null>(null)
     const [image3_url,setImage3_url]=useState<string|null>(null)
     const [adding,setAdding]=useState(false)
-
-
-
-
 
 //The function uploads the laptop into our database
 
@@ -63,9 +78,37 @@ const AddLaptop=async(details:laptop_details)=>{
 
 }
 
+//Here we build the default values for the form
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      title: "",
+      description: "",
+    },
+  })
 
 
-//here we build the form
+//function that runs when You submit the form
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    toast("You submitted the following values:", {
+      description: (
+        <pre className="bg-code text-code-foreground mt-2 w-[320px] overflow-x-auto rounded-md p-4">
+          <code>{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+      position: "bottom-right",
+      classNames: {
+        content: "flex flex-col gap-2",
+      },
+      style: {
+        "--border-radius": "calc(var(--radius)  + 4px)",
+      } as React.CSSProperties,
+    })
+  }
+
+
+
+
 
 return(
     <div>
@@ -75,3 +118,5 @@ return(
 )
 
 }
+
+
