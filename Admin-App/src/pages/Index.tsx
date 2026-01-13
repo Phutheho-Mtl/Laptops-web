@@ -1,26 +1,17 @@
-import HeroSection from "@/components/HeroSection";
-import FeaturedProducts from "@/components/FeaturedProducts";
-import ServicesSection from "@/components/ServicesSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import ImagesUploader from "@/components/ImageUploader";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import LaptopForm from "@/components/LaptopForm";
-import { useState } from "react";
+
+import useUser from "../components/authentication/Auth_context"
+import AdminDashBoard from "./dashboard";
+import Login from "./LoginPage"
 
 const Index = () => {
-  const [Imageurl,setImageurl]=useState<string|null>(null)
-  return (
-    <main className="min-h-screen bg-background">
-      <HeroSection />
-      <LaptopForm/>
-      <FeaturedProducts />
-      <ServicesSection />
-      <ContactSection />
-      <Footer />
-      <WhatsAppButton />
-    </main>
-  );
+  
+
+  const user=useUser();
+
+  if (!user) return <Login/>
+  else return <AdminDashBoard/>
+
+  
 };
 
 export default Index;
