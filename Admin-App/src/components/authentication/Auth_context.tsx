@@ -1,4 +1,4 @@
-import SupabaseClient from "@/Client_apis/Supabase_Client"
+import SupabaseClient from "@/Client_apis/Supabase_client"
 
 import {useEffect,useState} from "react"
 //The auth context collects the user information from Google after signIn then makes it available inside thea 
