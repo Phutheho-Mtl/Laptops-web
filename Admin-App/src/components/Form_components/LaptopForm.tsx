@@ -28,7 +28,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 import ImageDropzone from "./ImageDropZone";
-import SupabaseClient from "../Client_apis/Supabase_client";
+import SupabaseClient from "@/Client_apis/Supabase_client";
 
 // =====================
 // Validation Schema
@@ -107,6 +107,8 @@ const LaptopForm=()=>{
     } finally {
       setIsSubmitting(false);
     }
+    window.location.reload();
+
   };
 
   // =====================
@@ -128,6 +130,7 @@ const LaptopForm=()=>{
 
       <CardContent className="pt-6">
         <Form {...form}>
+          <div className="max-h-[80vh] overflow-y-auto pr-2">
           <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
             {/* Basic Info */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pl-10">
@@ -294,6 +297,7 @@ const LaptopForm=()=>{
               </Button>
             </div>
           </form>
+          </div>
         </Form>
       </CardContent>
     </Card>

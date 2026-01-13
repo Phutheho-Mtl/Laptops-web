@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import SupabaseClient from "../Client_apis/Supabase_client";
+import SupabaseClient from "@/Client_apis/Supabase_client";
 import { Upload, X, Image as ImageIcon, Loader2, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -24,7 +24,7 @@ const ImageDropzone = ({
   const [uploading, setUploading] = useState(false);
 
   // UPLOAD LOGIC
-  const uploadFile = async (file: File) => {
+  const uploadFile=async (file: File) => {
     try {
       const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (!validTypes.includes(file.type)) {
@@ -39,9 +39,9 @@ const ImageDropzone = ({
 
       setUploading(true);
 
-      const FileExt = file.name.split(".").pop();
-      const FileName = `BobbysRefurbished-${Date.now()}.${FileExt}`;
-      const FilePath = FileName;
+      const FileExt=file.name.split(".").pop();
+      const FileName=`BobbysRefurbished-${Date.now()}.${FileExt}`;
+      const FilePath=FileName;
 
       const { error: UploadError } = await SupabaseClient.storage
         .from("Laptops-Images")

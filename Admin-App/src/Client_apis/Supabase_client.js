@@ -9,6 +9,12 @@ if (!Supabase_api_key || !Supabase_url){
     throw new Error("Missing Supabase URL or Supabase Anon Key,Check enviroment variables")
 }
 
-const SupabaseClient=createClient(Supabase_url,Supabase_api_key)
+const SupabaseClient=createClient(Supabase_url,Supabase_api_key,{
+    auth:{
+        persistSession: true,   // ❗ Don't save session in localStorage
+        storage: sessionStorage,
+        autoRefreshToken: true,
+    }
+})
 
 export default SupabaseClient;

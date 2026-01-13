@@ -123,7 +123,7 @@ if(isLoading) return <Toaster/>
       {/* Price + Status + Button */}
       <div className="flex items-center justify-between pt-2">
         <span className="text-2xl font-bold text-primary">
-          {product.laptop_price}
+          R{product.laptop_price}
         </span>
 
         <div className="flex items-center gap-3">

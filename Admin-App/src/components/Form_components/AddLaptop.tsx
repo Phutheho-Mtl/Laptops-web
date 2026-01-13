@@ -1,15 +1,16 @@
 
-import SupabaseClient from "../Client_apis/Supabase_client"
+import SupabaseClient from "@/Client_apis/Supabase_client"
 import { useState } from "react"
 import { useForm } from "react-hook-form";
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { toast } from "./ui/sonner";
+import { toast } from "../ui/sonner";
 import ImageUploader from "./ImageUploader";
 
 
 
 type laptop_details={
+    laptop_id:string,
     brand:string;
     laptop_name :string,
     specifications :string,
