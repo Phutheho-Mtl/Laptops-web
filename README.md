@@ -48,4 +48,4 @@ https://supabase.com/docs/guides/auth
 
 This project represents the developer’s first production deployment using React and Supabase. No external templates or tutorials were used—every feature was built by studying and applying the above documentation.
 
-
+## Deployment is subject to the business owner's preffered Web service provide hence for testing we used Vercel but it can changed
