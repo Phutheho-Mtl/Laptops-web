@@ -1,4 +1,4 @@
-import SupabaseClient from "@/Client_apis/Supabase_Client"
+import SupabaseClient from "@/Client_apis/Supabase_client"
 import { useState } from "react";
 import { Check, Trash2, ChevronLeft, ChevronRight } from "lucide-react";
 import { toast } from "sonner";

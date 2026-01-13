@@ -2,7 +2,7 @@
 import LaptopProductCard from "./LaptopCard";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
-import SupabaseClient from "@/Client_apis/Supabase_Client";
+import SupabaseClient from "@/Client_apis/Supabase_client";
 import { useNavigate } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
