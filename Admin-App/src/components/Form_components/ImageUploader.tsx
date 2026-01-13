@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SupabaseClient from "@/Client_apis/Supabase_client"
+import SupabaseClient from "@/Client_apis/Supabase_client";
 import { Check } from "lucide-react"; // optional icon
 
 interface ImageUploaderProps {

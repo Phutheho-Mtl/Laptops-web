@@ -1,5 +1,5 @@
 
-import SupabaseClient from "@/Client_apis/Supabase_client"
+import SupabaseClient from "@/Client_apis/Supabase_client";
 import { useState } from "react"
 import { useForm } from "react-hook-form";
 import * as z from "zod"
