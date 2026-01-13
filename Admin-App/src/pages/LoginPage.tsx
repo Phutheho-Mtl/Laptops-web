@@ -1,5 +1,5 @@
 
-import SupabaseClient from "@/Client_apis/Supabase_Client";
+import SupabaseClient from "@/Client_apis/Supabase_client";
 import { Laptop } from "lucide-react";
 
 const Login = () => {
@@ -7,7 +7,7 @@ const Login = () => {
     await SupabaseClient.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirect: "http://localhost:8080",
+        redirectTo: "http://localhost:8080",
       },
     });
   };
