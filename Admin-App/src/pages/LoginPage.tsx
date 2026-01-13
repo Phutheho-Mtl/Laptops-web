@@ -1,5 +1,5 @@
 
-import SupabaseClient from "../Client_apis/Supabase_Client";
+import SupabaseClient from "@/Client_apis/Supabase_Client";
 import { Laptop } from "lucide-react";
 
 const Login = () => {
