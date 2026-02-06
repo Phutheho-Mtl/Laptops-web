@@ -70,7 +70,7 @@ const HeroSection = () => {
       
       {/* Image INSIDE the placeholder */}
       <img
-        src="/laptop-images/khusa45.jpg"
+        src="/laptop-images/main.jpeg"
         alt="Laptop"
         className="w-full h-full object-contain"
       />
