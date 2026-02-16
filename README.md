@@ -1,5 +1,7 @@
 # Laptops Web
 
+**Website here** https://buyer-bobbys-laptops.vercel.app
+
 Laptops Web is a React + Vite application developed for managing and showcasing refurbished laptops for sale. The repository contains two applications: a Buyer-facing site and an Admin portal.
 
 ## Project Overview
@@ -28,7 +30,7 @@ The developer focused on the following objectives:
 - Performing CRUD operations securely from the client
 - Uploading, storing, and retrieving media files through Supabase Storage
 - Designing distinct public and administrative user interfaces
-- Building entirely from official documentation without boilerplates or frameworks
+- Building entirely from official documentation without boilerplates.The best kind of engineering I think!!
 
 ## Documentation Consulted
 
@@ -48,4 +50,4 @@ https://supabase.com/docs/guides/auth
 
 This project represents the developer’s first production deployment using React and Supabase. No external templates or tutorials were used—every feature was built by studying and applying the above documentation.
 
-## Deployment is subject to the business owner's preffered Web service provide hence for testing we used Vercel but it can changed
+## Deployed on Vercel
